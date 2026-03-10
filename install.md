@@ -31,11 +31,17 @@ Requirements for Installation
 - Xcode 26.2 for IPA file build
 
 
-## **Run an existing flutter project on IDE**[**​**](https://docs.6amtech.com/docs-demandium/mobile-apps/mandatory-setup#run-an-existing-flutter-project-on-ide) [#](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-
 To begin, it’s essential to verify that your **Flutter** and **Integrated Development Environment (IDE)** setup has been configured accurately
 
 - Execute the command `flutter doctor` in your terminal. If any issues arise during this process, make sure to address and resolve them promptly.
+
+## Rename Folder to Camel Case
+
+Change the project folder name to camel case.
+
+Example:
+Delivery man app -> DeliveryManApp
+
 - Then open your project. Once the project is open, Android Studio may prompt you to install the dependencies. If not, you can run the `flutter pub get` from the terminal in the project directory to fetch the dependencies.
 - After the dependencies are installed, you should be able to run the app.
 
