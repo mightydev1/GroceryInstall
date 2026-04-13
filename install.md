@@ -1,46 +1,5 @@
+Setup
 
-# Mandatory Setup
-
-View Categories
-
-Table of Contents 
-
-- [Run an existing flutter project on IDE​](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-- [Change App Logo​ and Icon](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-- [Change App Name​](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-- [Change Base URL​](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-- [Change App Package​](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-- [Setup Firebase for Push Notification​](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-- [Add Google Map API Key​](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-
-Setup Essentials
-
-Requirements for Installation
-
-**Admin & Web (V16.1)**
-
-- PHP 8.2 or higher
-- MySQL 5.7 or higher
-- Laravel 12
-
-**Mobile App (V16.1)**
-
-- IDE: [Android Studio latest](https://developer.android.com/studio)
-- Flutter SDK (version 3.41.1 Stable)
-- Install [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- Xcode 26.2 for IPA file build
-
-
-To begin, it’s essential to verify that your **Flutter** and **Integrated Development Environment (IDE)** setup has been configured accurately
-
-- Execute the command `flutter doctor` in your terminal. If any issues arise during this process, make sure to address and resolve them promptly.
-
-## Rename Folder to Camel Case
-
-Change the project folder name to camel case.
-
-Example:
-Delivery man app -> DeliveryManApp
 
 - Then open your project. Once the project is open, Android Studio may prompt you to install the dependencies. If not, you can run the `flutter pub get` from the terminal in the project directory to fetch the dependencies.
 - After the dependencies are installed, you should be able to run the app.
@@ -57,14 +16,13 @@ To change **App logo** and **App Icon** you need to follow these steps :
 
 Please use the exact file name as described; otherwise, it will not work.
 
-**App Icon :**
+**App Icon :** Use the folder - AppLogoChangesForAll
 
-You can generate your app icon using this site [Visit](https://www.appicon.co)
+You can generate your app icon using this site [Visit](https://www.appicon.co) (Not required for test)
 
 - Then go to **/android/app/src/main/res** and replace all mipmap folders with your **<generated icon>/android** folder.
 - Again go to **/ios/Runner** and replace **Assets.xcassets** with your generated **Assets.xcassets** folder.
 
-## **Change App Name**[**​**](https://docs.6amtech.com/docs-demandium/mobile-apps/mandatory-setup#change-app-logo) [#](../deliveryman-app/deliveryman-app-mandatory-setup.md)
 
 You need to set your app name in three different places.
 
@@ -74,9 +32,6 @@ You need to set your app name in three different places.
 static const String appName = ‘YOUR_APP_NAME’;
 ```
 
-```text
-static const String appName = ‘YOUR_APP_NAME’;
-```
 
 - Change the value of **label** from **<project>/android/app/src/main/AndroidManifest.xml**
 
@@ -84,9 +39,6 @@ static const String appName = ‘YOUR_APP_NAME’;
 android:label="YOUR_APP_NAME"
 ```
 
-```text
-android:label="YOUR_APP_NAME"
-```
 
 - Change the value of **CFBundleName** from **<project>/iOS/Runner/info.plist/iOS/Runner/info.plist**
 
@@ -95,12 +47,9 @@ android:label="YOUR_APP_NAME"
 <string>YOUR_APP_NAME</string>
 ```
 
-```text
-<key>CFBundleName</key>
-<string>YOUR_APP_NAME</string>
-```
 
-## **Change Base URL**[**​**](https://docs.6amtech.com/docs-demandium/mobile-apps/mandatory-setup#change-base-url) [#](../deliveryman-app/deliveryman-app-mandatory-setup.md)
+
+## **Change Base URL**
 
 First you have to install your admin panel. For example: If your admin login url is **https://your\_domain.com/admin/auth/login** then the base url will be <https://your_domain.com>
 
@@ -122,17 +71,12 @@ Put your base url like that –
 static const String baseUrl = 'https://your_domain.com'; 
 ```
 
-```text
-static const String baseUrl = 'https://your_domain.com'; 
-```
-
-## **Change App Package**[**​**](https://docs.6amtech.com/docs-demandium/mobile-apps/mandatory-setup#change-app-package) [#](../deliveryman-app/deliveryman-app-mandatory-setup.md)
+## **Change App Package**
 
 First, you have to find out the existing package name/ namespace name. You can find it out from the top of the **android/app/build.gradle.kts** file. Now right-click on the project folder from Android Studio and click on replace in the path. You will get a popup window with two input boxes. In the first box, you have to put the existing package name that you saw in the **android/app/build.gradle.kts** file previously and write down your preferred package name in the second box and then click on the **Replace All** button.
 
-## **Setup Firebase for Push Notification**[**​**](https://docs.6amtech.com/docs-demandium/mobile-apps/mandatory-setup#setup-firebase-for-push-notification) [#](../deliveryman-app/deliveryman-app-mandatory-setup.md)
-
-First, you have to change your package name. If you didn’t, then follow [this](https://docs.6amtech.com/docs-stack-food/mobile-apps/mandatory-setup#change-app-package). Then have to create a Firebase project from [https://console.firebase.google.com](https://console.firebase.google.com/)
+## **Setup Firebase for Push Notification**[**​**]
+First, you have to change your package name. Then have to create a Firebase project from [https://console.firebase.google.com](https://console.firebase.google.com/). For now use the google-services.json file given in user folder 
 
 **WARNING**
 
@@ -145,15 +89,9 @@ Do not create multiple projects on your firebase console, if you have multiple a
 - Copy that **google-services.json** file and go to your **<project>/android/app/** folder then delete the existing  **google-services.json** file and paste the **google-services.json** file that you downloaded**.**
 - Create a totally white PNG logo for the notification icon. Paste it on **<project>/android/app/src/main/res/drawable/** and replace **notification\_icon.png** with your whiter version logo. Must keep the icon name **notification\_icon.png**
 
-**IOS Setup :**
 
-- Again add an app under the same project and download **GoogleService-Info.plist** and paste it under **<project>/iOS/ folder**. Also, follow this documentation for full setup for IOS: <https://firebase.flutter.dev/docs/messaging/apple-integration>
 
-Paste the Firebase server key in the admin panel Notification Settings section. You can get the server key from Firebase project settings->Cloud Messaging->Server Key.
-
-After your setup, please restart your IDE and uninstall your previously installed app then run it. Also, don’t try to test it on an emulator or simulator. Emulators and simulators are unable to get push. Use a real device in this case.
-
-## **Add Google Map API Key**[**​**](https://docs.6amtech.com/docs-demandium/mobile-apps/mandatory-setup#add-google-map-api-key) [#](../deliveryman-app/deliveryman-app-mandatory-setup.md)
+## **Add Google Map API Key**. For now use the key given in readme.pdf
 
 - You need to generate the google API key. Visit this link – <https://developers.google.com/maps/documentation/embed/get-api-key>
 - You need to enable the mentioned APIs: Direction API, Distance Matrix API, Geocoding API, Maps SDK for Android, Maps SDK for iOS, Maps JavaScript API, Place API, Geolocation API, Routes API, Place API (New)
@@ -172,9 +110,7 @@ For android, open <project>/android/app/src/main/AndroidManifest.xml and place t
 <meta-data android:name="com.google.android.geo.API_KEY" android:value=“YOUR_MAP_API_KEY_HERE”/>
 ```
 
-```text
-<meta-data android:name="com.google.android.geo.API_KEY" android:value=“YOUR_MAP_API_KEY_HERE”/>
-```
+
 
 Open lib/utill/app\_constants.dart file
 
@@ -182,21 +118,7 @@ Open lib/utill/app\_constants.dart file
 static const String polylineMapKey = 'YOUR_MAP_KEY_HERE';
 ```
 
-```text
-static const String polylineMapKey = 'YOUR_MAP_KEY_HERE';
-```
 
-For iOS, open <project>/iOS/Runner/AppDelegate.swift and place the value of GMSServices.provideAPIKey
-
-- /iOS/Runner/AppDelegate.swift
-
-```text
-GMSServices.provideAPIKey(“YOUR_MAP_API_KEY_HERE")
-```
-
-```text
-GMSServices.provideAPIKey(“YOUR_MAP_API_KEY_HERE")
-```
 ```markdown
 ## Android Signing Key Setup
 
@@ -205,7 +127,7 @@ Place the signing files in the following locations.
 ### Keystore File
 ```
 
-android -> key -> key.jks
+android -> key -> upload-key.jks
 
 ```
 
