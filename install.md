@@ -76,11 +76,7 @@ static const String baseUrl = 'https://your_domain.com'; 
 First, you have to find out the existing package name/ namespace name. You can find it out from the top of the **android/app/build.gradle.kts** file. Now right-click on the project folder from Android Studio and click on replace in the path. You will get a popup window with two input boxes. In the first box, you have to put the existing package name that you saw in the **android/app/build.gradle.kts** file previously and write down your preferred package name in the second box and then click on the **Replace All** button.
 
 ## **Setup Firebase for Push Notification**[**​**]
-First, you have to change your package name. Then have to create a Firebase project from [https://console.firebase.google.com](https://console.firebase.google.com/). For now use the google-services.json file given in user folder 
-
-**WARNING**
-
-Do not create multiple projects on your firebase console, if you have multiple apps like User App, Web, vendor App and delivery App. Create only one project and add multiple apps under the project.
+First, you have to change your package name. For now use the google-services.json file given in user folder 
 
 **Android Setup :**
 
@@ -93,14 +89,6 @@ Do not create multiple projects on your firebase console, if you have multiple a
 
 ## **Add Google Map API Key**. For now use the key given in readme.pdf
 
-- You need to generate the google API key. Visit this link – <https://developers.google.com/maps/documentation/embed/get-api-key>
-- You need to enable the mentioned APIs: Direction API, Distance Matrix API, Geocoding API, Maps SDK for Android, Maps SDK for iOS, Maps JavaScript API, Place API, Geolocation API, Routes API, Place API (New)
-- You have to enable a billing account. Visit this url for activating: <https://support.google.com/googleapi/answer/6158867?hl=en>
-- After generating the API key, you have to put it in 3 different places for Android, iOS and web.
-
-**WARNING**
-
-If your map key was generated before **March 1, 2025**, please make sure to newly enable the following APIs: **Routes API** and **Places API (New)**. All other settings can remain unchanged.
 
 For android, open <project>/android/app/src/main/AndroidManifest.xml and place the value of com.google.android.geo.API\_KEY
 
